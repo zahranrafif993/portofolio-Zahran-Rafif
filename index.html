@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portofolio | Zahran Rafif Arifuddin</title>
+  <meta name="description" content="Portofolio mahasiswa Informatika: profil, kemampuan, pencapaian, dan kontak.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231F5FD6'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='700' text-anchor='middle' fill='white'%3EZR%3C/text%3E%3C/svg%3E">
+  <meta name="theme-color" content="#1F5FD6">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:title" content="Zahran Rafif Arifuddin | Portofolio">
+  <meta property="og:description" content="Portofolio mahasiswa Informatika: profil, kemampuan, pencapaian, dan kontak.">
+  <!-- GANTI: alamat lengkap gambar setelah website di-upload (misal ke GitHub Pages) -->
+  <meta property="og:image" content="https://USERNAME.github.io/NAMA-REPOSITORY/preview.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ========== WARNA & FONT (ubah di sini kalau mau ganti tema) ========== */
+    :root {
+      --bg: #F1F3EE;
+      --surface: #FFFFFF;
+      --text: #16202B;
+      --muted: #5A6672;
+      --line: #D5DAD2;
+      --accent: var(--p);
+      --accent-text: #FFFFFF;
+      --aksen2: var(--p2);
+      --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+      --body: "Figtree", "Segoe UI", system-ui, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #12171D; --surface: #1A222B; --text: #EDF0F2;
+        --muted: #9AA6B2; --line: #2B3642; --accent: var(--pd); --accent-text: #0E1520;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #12171D; --surface: #1A222B; --text: #EDF0F2;
+      --muted: #9AA6B2; --line: #2B3642; --accent: var(--pd); --accent-text: #0E1520;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: var(--body); font-size: 1.0625rem; line-height: 1.65;
+    }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 5rem 0; border-top: 1px solid var(--line); }
+    h2 { font-family: var(--display); font-weight: 800; font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 2rem; }
+    p.lead { max-width: 62ch; color: var(--muted); }
+
+    /* ========== NAVIGASI ========== */
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
+    }
+    nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; height: 4rem; }
+    .brand { font-family: var(--display); font-weight: 800; text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 1.25rem; font-size: .95rem; }
+    .nav-links a { text-decoration: none; color: var(--muted); }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.btn, .nav-links a.btn:hover { color: var(--accent-text); }
+    .btn {
+      display: inline-block; padding: .7rem 1.3rem; border-radius: 999px;
+      background: var(--accent); color: var(--accent-text); font-weight: 600;
+      text-decoration: none; border: 0; cursor: pointer; font: inherit; font-weight: 600;
+    }
+    .btn.ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
+    .btn:hover { filter: brightness(1.08); }
+    #theme { width: 2.4rem; height: 2.4rem; padding: 0; display: grid; place-items: center; }
+
+    /* ========== HERO ========== */
+    .hero { border-top: 0; padding: 4rem 0 5rem; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 3rem; align-items: center; }
+    .hero h1 {
+      font-family: var(--display); font-weight: 800; letter-spacing: -0.035em;
+      font-size: clamp(2.2rem, 6.2vw, 4.4rem); line-height: 1;
+    }
+    .hero h1 .outline { color: transparent; -webkit-text-stroke: 2px var(--text); }
+    .hero .role { margin: 1.5rem 0 2rem; font-size: 1.2rem; color: var(--muted); max-width: 40ch; }
+    .hero .actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+    .photo {
+      width: 100%; max-width: 380px; max-height: 80vh;
+      margin-left: auto; aspect-ratio: 4 / 5;
+      border-radius: 1.5rem; overflow: hidden;
+      background: var(--surface); border: 1px solid var(--line);
+      display: grid; place-items: center; position: relative;
+    }
+    .photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; position: absolute; inset: 0; }
+    .photo span { font-family: var(--display); font-weight: 800; font-size: 5rem; color: var(--line); }
+    .hero h1 .kata { display: inline-block; white-space: nowrap; }
+    .hero h1 .huruf {
+      display: inline-block; opacity: 0;
+      transform: translateY(60%) rotate(6deg);
+      animation: naik .7s cubic-bezier(.2, .8, .2, 1) forwards;
+      animation-delay: calc(var(--i) * 70ms + 200ms);
+    }
+    @keyframes naik { to { opacity: 1; transform: none; } }
+
+    /* ========== ABOUT ========== */
+    .about-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 3rem; }
+    .id-card { background: var(--surface); border: 1px solid var(--line); border-radius: 1rem; padding: 1.5rem; }
+    .id-card dl { display: grid; grid-template-columns: auto 1fr; gap: .6rem 1.25rem; }
+    .id-card dt { color: var(--muted); }
+    .id-card dd { font-weight: 600; }
+    .about-text p + p { margin-top: 1rem; }
+    .doing { margin-top: 1.5rem; display: grid; gap: .75rem; }
+    .doing div { display: flex; gap: .75rem; align-items: baseline; }
+    .doing b { min-width: 6.5rem; }
+    .doing span { color: var(--muted); }
+
+    /* ========== WHAT I CAN DO ========== */
+    .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+    .skill { background: var(--surface); border: 1px solid var(--line); border-radius: 1rem; padding: 1.75rem; }
+    .skill h3 { font-family: var(--display); font-size: 1.4rem; margin-bottom: .5rem; }
+    .skill p { color: var(--muted); margin-bottom: 1.25rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; }
+    .tags li { padding: .25rem .75rem; border: 1px solid var(--line); border-radius: 999px; font-size: .9rem; }
+
+    /* ========== ACHIEVEMENT (timeline: memang berurutan menurut tahun) ========== */
+    .timeline { list-style: none; border-left: 2px solid var(--line); margin-left: .5rem; }
+    .timeline li { position: relative; padding: 0 0 2.25rem 2rem; }
+    .timeline li::before {
+      content: ""; position: absolute; left: -.55rem; top: .45rem;
+      width: 1rem; height: 1rem; border-radius: 50%; background: var(--accent);
+      border: 3px solid var(--bg);
+    }
+    .year { font-weight: 600; color: var(--accent); }
+    .timeline h3 { font-family: var(--display); font-size: 1.35rem; }
+    .org { color: var(--muted); font-size: .95rem; margin-bottom: .4rem; }
+    .timeline a.bukti { display: inline-block; margin-top: .5rem; font-weight: 600; color: var(--accent); }
+
+    /* ========== CONTACT ========== */
+    .contact-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: start; }
+    .contact h2 { font-size: clamp(2.4rem, 7vw, 4.8rem); }
+    .links { display: grid; gap: .75rem; }
+    .links a {
+      display: flex; flex-direction: column; text-decoration: none;
+      background: var(--surface); border: 1px solid var(--line); border-radius: 1rem; padding: 1rem 1.25rem;
+    }
+    .links a:hover { border-color: var(--accent); }
+    .links small { color: var(--muted); }
+    .links strong { overflow-wrap: anywhere; }
+    footer { border-top: 1px solid var(--line); padding: 1.5rem 0; color: var(--muted); font-size: .9rem; }
+
+
+    /* ========== TAB / HALAMAN + ANIMASI BUKA ========== */
+    main > section { display: none; border-top: 0; min-height: calc(100vh - 4rem); }
+    main > section.aktif { display: block; }
+    .nav-links a[aria-current="page"]:not(.btn) { color: var(--text); font-weight: 600; box-shadow: 0 2px 0 var(--accent); }
+    .btn[aria-current="page"] { outline: 2px solid var(--text); outline-offset: 2px; }
+
+    @media (prefers-reduced-motion: no-preference) {
+      /* halaman baru masuk dari kiri/kanan (arah diatur JS lewat --dx) */
+      main > section.aktif { animation: panelMasuk .55s cubic-bezier(.2, .8, .2, 1) both; }
+      /* halaman lama keluar sebelum diganti */
+      main > section.aktif.keluar { animation: panelKeluar .22s ease-in both; }
+      /* isi halaman muncul berurutan */
+      main > section.aktif .wrap > *,
+      main > section.aktif .skill,
+      main > section.aktif .timeline li,
+      main > section.aktif .links a {
+        animation: muncul .6s cubic-bezier(.2, .8, .2, 1) backwards;
+        animation-delay: calc(var(--k, 0) * 90ms + 150ms);
+      }
+      main > section.aktif.keluar .wrap > *,
+      main > section.aktif.keluar .skill,
+      main > section.aktif.keluar .timeline li,
+      main > section.aktif.keluar .links a { animation: none; }
+    }
+    .wrap > :nth-child(2), .skill:nth-child(2), .timeline li:nth-child(2), .links a:nth-child(2) { --k: 1; }
+    .wrap > :nth-child(3), .skill:nth-child(3), .timeline li:nth-child(3), .links a:nth-child(3) { --k: 2; }
+    .wrap > :nth-child(4), .skill:nth-child(4), .timeline li:nth-child(4), .links a:nth-child(4) { --k: 3; }
+    @keyframes panelMasuk { from { opacity: 0; transform: translateX(calc(var(--dx, 0) * 60px)); } to { opacity: 1; transform: none; } }
+    @keyframes panelKeluar { to { opacity: 0; transform: translateX(calc(var(--dx, 0) * 60px)); } }
+    @keyframes muncul { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+
+    /* ========== PEMUTAR MUSIK ========== */
+    .musik {
+      position: fixed; z-index: 20;
+      left: max(1rem, env(safe-area-inset-left, 0px)); bottom: max(1rem, env(safe-area-inset-bottom, 0px));
+      display: flex; align-items: center; gap: .6rem;
+      background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: .35rem .9rem .35rem .4rem;
+    }
+    .musik[hidden] { display: none; }
+    .musik-btn { width: 2.3rem; height: 2.3rem; border-radius: 50%; border: 0; cursor: pointer; background: var(--accent); color: var(--accent-text); display: grid; place-items: center; }
+    .musik-btn svg { width: 1.1rem; height: 1.1rem; fill: currentColor; }
+    .musik-btn .ic-pause { display: none; }
+    .musik-btn.main .ic-pause { display: block; }
+    .musik-btn.main .ic-play { display: none; }
+    .eq { display: inline-flex; gap: 2px; align-items: flex-end; height: 14px; color: var(--accent); }
+    .eq i { width: 3px; height: 4px; background: currentColor; border-radius: 1px; }
+    .musik input[type="range"] { width: 80px; accent-color: var(--accent); cursor: pointer; }
+    @media (prefers-reduced-motion: no-preference) {
+      .musik-btn.main ~ .eq i { animation: eq .9s ease-in-out infinite alternate; }
+      .eq i:nth-child(2) { animation-delay: .2s; }
+      .eq i:nth-child(3) { animation-delay: .4s; }
+    }
+    @keyframes eq { from { height: 3px; } to { height: 14px; } }
+    footer { padding-bottom: 4.5rem; }
+
+    /* ========== LATAR BERGERAK + CAHAYA KURSOR ========== */
+    main, footer { position: relative; z-index: 1; }
+    .latar {
+      position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
+      background-image: radial-gradient(color-mix(in srgb, var(--text) 14%, transparent) 1px, transparent 1.5px);
+      background-size: 28px 28px;
+    }
+    .latar::before, .latar::after { content: ""; position: absolute; width: 55vmax; height: 55vmax; border-radius: 50%; filter: blur(90px); }
+    .latar::before { background: var(--accent); top: -25vmax; left: -15vmax; opacity: .22; }
+    .latar::after { background: var(--aksen2); bottom: -28vmax; right: -18vmax; opacity: .20; }
+    @media (prefers-reduced-motion: no-preference) {
+      .latar::before { animation: hanyut1 24s ease-in-out infinite alternate; }
+      .latar::after { animation: hanyut2 30s ease-in-out infinite alternate; }
+    }
+    @keyframes hanyut1 { to { transform: translate(18vmax, 14vmax) scale(1.15); } }
+    @keyframes hanyut2 { to { transform: translate(-16vmax, -12vmax) scale(1.2); } }
+
+    .cahaya {
+      position: fixed; left: 0; top: 0; width: 460px; height: 460px; border-radius: 50%;
+      background: radial-gradient(circle, color-mix(in srgb, var(--accent) 30%, transparent), transparent 65%);
+      pointer-events: none; z-index: 0; opacity: 0; transition: opacity .4s; will-change: transform;
+    }
+    @media (hover: none) { .cahaya { display: none; } }
+
+    /* kartu miring mengikuti kursor */
+    .skill, .id-card {
+      transform: perspective(800px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+      transition: transform .18s ease-out, border-color .2s;
+    }
+    .skill:hover, .id-card:hover { border-color: var(--accent); }
+
+    /* ========== SAPAAN + JAM ========== */
+    .sapa { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin-bottom: 1.25rem; font-size: .95rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .sapa #salam { color: var(--text); font-weight: 600; }
+    .titik { width: .55rem; height: .55rem; border-radius: 50%; background: #2FB26B; }
+    @media (prefers-reduced-motion: no-preference) { .titik { animation: denyut 1.8s ease-out infinite; } }
+    @keyframes denyut { 0% { box-shadow: 0 0 0 0 rgba(47, 178, 107, .55); } 100% { box-shadow: 0 0 0 .6rem rgba(47, 178, 107, 0); } }
+
+    /* ========== DERETAN LOGO TEKNOLOGI ========== */
+    .marquee {
+      margin-top: 2.5rem; overflow: hidden;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    }
+    .jalur { display: flex; width: max-content; }
+    .grup { display: flex; gap: 1rem; padding-right: 1rem; list-style: none; }
+    .grup li { display: flex; align-items: center; gap: .6rem; padding: .45rem 1rem .45rem .45rem; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); white-space: nowrap; font-weight: 500; }
+    .lg { width: 2rem; height: 2rem; border-radius: .55rem; display: grid; place-items: center; background: var(--c); color: var(--t, #fff); font: 800 .72rem/1 var(--display); }
+    @media (prefers-reduced-motion: no-preference) {
+      .jalur { animation: geser 32s linear infinite; }
+      .marquee:hover .jalur { animation-play-state: paused; }
+    }
+    @keyframes geser { to { transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) {
+      .marquee { overflow-x: auto; }
+      .grup[aria-hidden="true"] { display: none; }
+    }
+
+    /* ========== TEKS PERAN MENGETIK ========== */
+    .peran { margin-top: 1rem; min-height: 1.4em; font-family: var(--display); font-weight: 800; font-size: clamp(1.3rem, 3vw, 2rem); letter-spacing: -.01em; color: var(--accent); }
+    .peran + .role { margin-top: .75rem; }
+    .kursor { display: inline-block; width: 3px; height: 1em; margin-left: 3px; vertical-align: -.12em; background: currentColor; }
+    @media (prefers-reduced-motion: no-preference) { .kursor { animation: kedip 1s steps(1) infinite; } }
+    @keyframes kedip { 50% { opacity: 0; } }
+
+    /* ========== WARNA TEMA (pemilih warna + warna per tab) ========== */
+    @property --p  { syntax: "<color>"; inherits: true; initial-value: #1F5FD6; }
+    @property --pd { syntax: "<color>"; inherits: true; initial-value: #6C9CFF; }
+    @property --p2 { syntax: "<color>"; inherits: true; initial-value: #E8895A; }
+    :root { --p: #1F5FD6; --pd: #6C9CFF; --p2: #E8895A; }
+    :root[data-warna="biru"], :root[data-warna="auto"][data-tab="home"], :root[data-warna="auto"][data-tab="contact"] { --p: #1F5FD6; --pd: #6C9CFF; --p2: #E8895A; }
+    :root[data-warna="ungu"], :root[data-warna="auto"][data-tab="about"] { --p: #7C3AED; --pd: #A78BFA; --p2: #F2A33A; }
+    :root[data-warna="hijau"], :root[data-warna="auto"][data-tab="skills"] { --p: #0E7F5C; --pd: #3DD9A0; --p2: #E0607E; }
+    :root[data-warna="oranye"] { --p: #C4510B; --pd: #FF9A5C; --p2: #3B7DDB; }
+    :root[data-warna="pink"], :root[data-warna="auto"][data-tab="achievement"] { --p: #D6307F; --pd: #FF77B0; --p2: #7A5AF0; }
+    @media (prefers-reduced-motion: no-preference) {
+      :root { transition: --p .7s ease, --pd .7s ease, --p2 .7s ease; }
+    }
+
+    /* menu: tombol warna + bahasa */
+    .nav-links { gap: 1rem; }
+    header .wrap { max-width: 1280px; }
+    .brand, .nav-links a, .lang-btn { white-space: nowrap; }
+    @media (max-width: 1120px) {
+      nav { height: auto; flex-wrap: wrap; padding: .6rem 0; gap: .4rem 1rem; }
+      .nav-links { flex-wrap: wrap; gap: .5rem 1rem; }
+    }
+    .ikon-btn { width: 2.4rem; height: 2.4rem; padding: 0; display: grid; place-items: center; }
+    .warna-wadah { position: relative; }
+    .roda { width: 1.1rem; height: 1.1rem; border-radius: 50%; background: conic-gradient(#1F5FD6, #7C3AED, #D6307F, #C4510B, #0E7F5C, #1F5FD6); }
+    .warna-panel {
+      position: absolute; right: 0; top: calc(100% + .6rem); z-index: 30; display: flex; gap: .55rem;
+      padding: .65rem .8rem; background: var(--surface); border: 1px solid var(--line); border-radius: 999px;
+      box-shadow: 0 12px 30px -12px rgba(0, 0, 0, .35);
+    }
+    .warna-panel[hidden] { display: none; }
+    .wd { width: 1.6rem; height: 1.6rem; border-radius: 50%; border: 2px solid var(--surface); background: var(--c); box-shadow: 0 0 0 1px var(--line); cursor: pointer; padding: 0; }
+    .wd[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--text); }
+    .lang-btn { padding: .35rem .7rem; font-size: .8rem; letter-spacing: .02em; }
+    .lang-btn span { opacity: .5; }
+    .lang-btn span.on { opacity: 1; color: var(--accent); }
+
+    /* ========== NAMA BERGRADASI (baris kedua) ========== */
+    .hero h1 .outline .huruf {
+      -webkit-text-stroke: 0; color: transparent;
+      background: linear-gradient(90deg, var(--accent), var(--aksen2), var(--accent));
+      background-size: 200% 100%; -webkit-background-clip: text; background-clip: text;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .hero h1 .outline .huruf {
+        animation: naik .7s cubic-bezier(.2, .8, .2, 1) forwards, alir 5s linear infinite;
+        animation-delay: calc(var(--i) * 70ms + 200ms), calc(var(--i) * -380ms);
+      }
+    }
+    @keyframes alir { to { background-position: 200% 0; } }
+
+    /* ========== KATA BESAR BERJALAN ========== */
+    .kata-besar { margin: 3.5rem -3% 0; overflow: hidden; border-block: 1px solid var(--line); padding: .5rem 0; transform: rotate(-1.5deg); background: color-mix(in srgb, var(--surface) 60%, transparent); }
+    .jalur2 { display: flex; width: max-content; }
+    .grup2 { display: flex; align-items: center; gap: 2rem; padding-right: 2rem; flex-shrink: 0; }
+    .grup2 span { font-family: var(--display); font-weight: 800; font-size: clamp(2rem, 6vw, 4.2rem); letter-spacing: -.02em; text-transform: uppercase; white-space: nowrap; }
+    .grup2 i { font-style: normal; font-size: clamp(1.4rem, 3vw, 2.2rem); color: var(--aksen2); }
+    .w1 { color: var(--text); }
+    .w2 { color: var(--accent); }
+    .w3 { color: transparent; -webkit-text-stroke: 2px var(--text); }
+    .w4 { color: var(--aksen2); }
+    @media (prefers-reduced-motion: no-preference) {
+      .jalur2 { animation: geser 40s linear infinite reverse; }
+      .kata-besar:hover .jalur2 { animation-play-state: paused; }
+    }
+
+    /* ========== BAR KEMAMPUAN ========== */
+    .bar-daftar { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.1rem 2.5rem; margin-top: 2.75rem; }
+    .bar-judul { grid-column: 1 / -1; font-family: var(--display); font-size: 1.4rem; }
+    .bar-atas { display: flex; justify-content: space-between; margin-bottom: .4rem; font-weight: 500; }
+    .bar-atas b { color: var(--c); font-variant-numeric: tabular-nums; }
+    .bar-track { height: .6rem; border-radius: 999px; background: var(--line); overflow: hidden; }
+    .bar-track i { display: block; height: 100%; width: calc(var(--v) * 1%); border-radius: inherit; background: var(--c); }
+    @media (prefers-reduced-motion: no-preference) {
+      main > section.aktif .bar-track i { animation: isi 1.2s cubic-bezier(.2, .8, .2, 1) .5s backwards; }
+    }
+    @keyframes isi { from { width: 0; } }
+    .wrap > :nth-child(5) { --k: 4; }
+    .wrap > :nth-child(6) { --k: 5; }
+
+    /* ========== KURSOR KUSTOM (cincin) ========== */
+    .cincin { position: fixed; left: 0; top: 0; width: 34px; height: 34px; pointer-events: none; z-index: 200; opacity: 0; transition: opacity .3s; will-change: transform; }
+    .cincin::before { content: ""; position: absolute; inset: 0; border: 2px solid var(--accent); border-radius: 50%; transition: transform .2s, background .2s; }
+    .cincin.besar::before { transform: scale(1.7); background: color-mix(in srgb, var(--accent) 16%, transparent); }
+    .cincin.tekan::before { transform: scale(.7); }
+    @media (hover: none) { .cincin { display: none; } }
+
+    /* visualizer di pemutar musik */
+    .viz { display: block; width: 48px; height: 28px; }
+    /* ========== PINDAH TAB KEREN: tirai, dok, menu cepat ========== */
+    .tirai, .tirai2 { position: fixed; inset: 0; z-index: 150; pointer-events: none; visibility: hidden; }
+    .tirai2 { z-index: 149; background: var(--aksen2); }
+    .tirai { background: var(--accent); color: var(--accent-text); display: grid; place-items: center; text-align: center; }
+    .tirai .no { font: 800 clamp(1rem, 3vw, 1.6rem)/1 var(--display); letter-spacing: .35em; opacity: .75; margin-bottom: .6rem; }
+    .tirai .nm { font: 800 clamp(3rem, 14vw, 10rem)/1 var(--display); letter-spacing: -.04em; text-transform: uppercase; }
+
+    .dok {
+      position: fixed; z-index: 20; left: 50%; bottom: max(1rem, env(safe-area-inset-bottom, 0px)); transform: translateX(-50%);
+      display: flex; gap: .25rem; padding: .3rem;
+      background: color-mix(in srgb, var(--surface) 88%, transparent); backdrop-filter: blur(8px);
+      border: 1px solid var(--line); border-radius: 999px;
+    }
+    .dok-btn { display: flex; align-items: center; gap: .45rem; padding: .3rem .4rem; border: 0; background: transparent; color: var(--muted); border-radius: 999px; cursor: pointer; font: inherit; font-size: .85rem; font-weight: 600; }
+    .dok-btn kbd { display: grid; place-items: center; width: 1.5rem; height: 1.5rem; border-radius: .45rem; border: 1px solid var(--line); background: var(--bg); color: var(--text); font: 700 .75rem var(--body); }
+    .dok-btn span { max-width: 0; overflow: hidden; white-space: nowrap; transition: max-width .35s ease; }
+    .dok-btn.aktif { background: var(--accent); color: var(--accent-text); padding-right: .85rem; }
+    .dok-btn.aktif kbd { background: transparent; color: inherit; border-color: color-mix(in srgb, currentColor 45%, transparent); }
+    .dok-btn.aktif span, .dok-btn:hover span, .dok-btn:focus-visible span { max-width: 9rem; }
+    @media (max-width: 800px) { .dok { display: none; } }
+
+    .palet { position: fixed; inset: 0; z-index: 160; display: grid; place-items: start center; padding: 14vh 1rem 1rem; background: color-mix(in srgb, var(--bg) 55%, transparent); backdrop-filter: blur(6px); }
+    .palet[hidden] { display: none; }
+    .palet-kotak { width: min(560px, 100%); background: var(--surface); border: 1px solid var(--line); border-radius: 1.1rem; box-shadow: 0 30px 70px -25px rgba(0, 0, 0, .5); overflow: hidden; }
+    @media (prefers-reduced-motion: no-preference) {
+      .palet:not([hidden]) .palet-kotak { animation: paletMasuk .22s cubic-bezier(.2, .8, .2, 1); }
+    }
+    @keyframes paletMasuk { from { opacity: 0; transform: translateY(-12px) scale(.97); } }
+    .palet-cari { width: 100%; padding: 1rem 1.2rem; border: 0; border-bottom: 1px solid var(--line); background: transparent; color: var(--text); font: inherit; font-size: 1.05rem; outline: 0; }
+    .palet-daftar { list-style: none; max-height: 50vh; overflow-y: auto; padding: .4rem; }
+    .palet-daftar li { display: flex; align-items: center; gap: .8rem; padding: .65rem .8rem; border-radius: .7rem; cursor: pointer; }
+    .palet-daftar li.aktif { background: var(--accent); color: var(--accent-text); }
+    .palet-daftar kbd { display: grid; place-items: center; min-width: 1.6rem; height: 1.6rem; border-radius: .45rem; border: 1px solid color-mix(in srgb, currentColor 35%, transparent); font: 700 .75rem var(--body); }
+    .palet-daftar small { margin-left: auto; opacity: .7; }
+    .palet-bawah { padding: .5rem 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .8rem; }
+
+    .tip { position: fixed; z-index: 40; left: 50%; bottom: 5rem; max-width: min(92vw, 30rem); text-align: center; transform: translate(-50%, 20px); opacity: 0; padding: .6rem 1.1rem; background: var(--text); color: var(--bg); border-radius: 1rem; font-size: .9rem; transition: opacity .4s, transform .4s; pointer-events: none; }
+    .tip.tampil { opacity: 1; transform: translate(-50%, 0); }
+        /* ========== LOGO KAMPUS (pojok kanan atas) ========== */
+    .logo-kampus { display: grid; place-items: center; flex-shrink: 0; width: 3rem; height: 3rem; padding: .15rem; background: #fff; border: 1px solid var(--line); border-radius: .75rem; text-decoration: none; transition: transform .2s, box-shadow .2s; }
+    .logo-kampus:hover { transform: translateY(-2px) rotate(-3deg); box-shadow: 0 8px 18px -8px rgba(0, 0, 0, .4); }
+    .logo-kampus img { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .logo-kampus .logo-teks { display: none; font: 800 .62rem/1 var(--display); color: #1b2a4a; letter-spacing: .02em; }
+    .logo-kampus.tanpa-gambar .logo-teks { display: block; }
+    @media (max-width: 1120px) {
+      nav { position: relative; }
+      .nav-links { flex-basis: 100%; }
+      .logo-kampus { position: absolute; top: .4rem; right: 0; width: 2.6rem; height: 2.6rem; }
+    }
+    /* ========== RESPONSIF (HP) ========== */
+    @media (max-width: 800px) {
+      .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .photo { max-width: 320px; }
+      .musik input[type="range"] { display: none; }
+      nav { height: auto; flex-wrap: wrap; padding: .6rem 0; gap: .4rem 1rem; }
+      .nav-links { flex-wrap: wrap; gap: .5rem 1rem; }
+      section { padding: 3.5rem 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .hero h1 .huruf { animation: none; opacity: 1; transform: none; }
+    }
+  </style>
+  <noscript><style>main > section { display: block !important; }</style></noscript>
+</head>
+
+<body>
+  <div class="latar" aria-hidden="true"></div>
+  <div class="cahaya" aria-hidden="true"></div>
+  <div class="cincin" aria-hidden="true"></div>
+  <!-- GANTI: nama file lagu (taruh di folder yang sama dengan index.html) -->
+  <audio id="musik" src="musik.mp3" loop preload="auto"></audio>
+
+  <header>
+    <div class="wrap">
+      <nav aria-label="Navigasi utama">
+        <a class="brand" href="#home">Zahran Rafif Arifuddin</a>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">What I Can Do</a>
+          <a href="#achievement">Achievement</a>
+          <div class="warna-wadah">
+            <button class="btn ghost ikon-btn" id="warna-btn" type="button" aria-label="Pilih warna tema" aria-haspopup="true" aria-expanded="false"><span class="roda" aria-hidden="true"></span></button>
+            <div class="warna-panel" id="warna-panel" role="group" aria-label="Warna tema" hidden>
+              <button class="wd" type="button" data-warna="auto" title="Otomatis (berubah tiap tab)" aria-label="Warna otomatis" style="--c: conic-gradient(#1F5FD6, #7C3AED, #D6307F, #C4510B, #0E7F5C, #1F5FD6)"></button>
+              <button class="wd" type="button" data-warna="biru" title="Biru" aria-label="Biru" style="--c: #1F5FD6"></button>
+              <button class="wd" type="button" data-warna="ungu" title="Ungu" aria-label="Ungu" style="--c: #7C3AED"></button>
+              <button class="wd" type="button" data-warna="hijau" title="Hijau" aria-label="Hijau" style="--c: #0E7F5C"></button>
+              <button class="wd" type="button" data-warna="oranye" title="Oranye" aria-label="Oranye" style="--c: #C4510B"></button>
+              <button class="wd" type="button" data-warna="pink" title="Pink" aria-label="Pink" style="--c: #D6307F"></button>
+            </div>
+          </div>
+          <button class="btn ghost lang-btn" id="bahasa-btn" type="button" aria-label="Ganti bahasa / Change language"><span data-b="id" class="on">ID</span> / <span data-b="en">EN</span></button>
+          <button class="btn ghost" id="theme" type="button" aria-label="Ganti mode terang/gelap">◐</button>
+          <a class="btn" href="#contact">Contact</a>
+                    <a class="logo-kampus" href="https://www.unesa.ac.id" target="_blank" rel="noopener" title="UNESA" aria-label="UNESA">
+            <span class="logo-teks">UNESA</span>
+            <img src="logo-unesa.png" alt="Logo UNESA" onerror="this.parentNode.classList.add('tanpa-gambar'); this.remove()">
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <!-- GANTI: nama depan & nama belakang -->
+          <p class="sapa">
+            <span class="titik" aria-hidden="true"></span>
+            <span id="salam">Halo</span>·<span id="tanggal"></span>·<span id="jam"></span>
+            <!-- GANTI: zona waktu kalau perlu (WIB = Asia/Jakarta, di JavaScript) -->
+            <span>WIB</span>
+          </p>
+          <h1 id="nama" aria-label="Zahran Rafif Arifuddin"><span class="baris">ZAHRAN RAFIF</span><br><span class="baris outline">ARIFUDDIN</span></h1>
+          <!-- GANTI: daftar peran ada di JavaScript (daftarPeran) -->
+          <p class="peran" aria-label="Web Developer, Python Learner, Problem Solver"><span id="peran-teks" aria-hidden="true"></span><span class="kursor" aria-hidden="true"></span></p>
+          <p class="role">Mahasiswa Informatika yang suka mengubah ide menjadi aplikasi yang berfungsi.</p>
+          <div class="actions">
+            <a class="btn" href="#achievement">Lihat pencapaian</a>
+            <a class="btn ghost" href="CV ZAHRAN RAFIF.pdf" download>Unduh CV</a>
+          </div>
+        </div>
+        <!-- GANTI: taruh foto di folder portfolio dengan nama foto.jpg -->
+        <div class="photo">
+          <span aria-hidden="true">Z</span>
+          <img src="foto.jpg" alt="Foto Zahran Rafif Arifuddin" onerror="this.remove()">
+        </div>
+      </div>
+      <div class="kata-besar" aria-hidden="true">
+        <div class="jalur2">
+          <div class="grup2">
+            <span class="w1">Web</span><i>✦</i><span class="w2">Python</span><i>✦</i><span class="w3">Database</span><i>✦</i><span class="w4">Design</span><i>✦</i>
+            <span class="w1">Web</span><i>✦</i><span class="w2">Python</span><i>✦</i><span class="w3">Database</span><i>✦</i><span class="w4">Design</span><i>✦</i>
+          </div>
+          <div class="grup2">
+            <span class="w1">Web</span><i>✦</i><span class="w2">Python</span><i>✦</i><span class="w3">Database</span><i>✦</i><span class="w4">Design</span><i>✦</i>
+            <span class="w1">Web</span><i>✦</i><span class="w2">Python</span><i>✦</i><span class="w3">Database</span><i>✦</i><span class="w4">Design</span><i>✦</i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section id="about">
+      <div class="wrap">
+        <h2>About</h2>
+        <div class="about-grid">
+          <div class="id-card">
+            <!-- GANTI: Nama, NIM, Prodi, Pendidikan (wajib menurut panduan) -->
+            <dl>
+              <dt>Nama</dt><dd>Zahran Rafif Arifuddin</dd>
+              <dt>NIM</dt><dd>26050974092</dd>
+              <dt>Prodi</dt><dd>Pendidikan Teknologi Informasi (PTI)</dd>
+              <dt>Pendidikan</dt><dd>S1 Pendidikan Teknologi Informasi, Universitas Negeri Surabaya (2026 – sekarang)</dd>
+            </dl>
+          </div>
+          <div class="about-text">
+            <!-- GANTI: deskripsi singkat tentang dirimu -->
+            <p>Halo, saya mahasiswa baru Informatika. Saya sedang belajar membangun website dan program, dan ingin terus berkembang lewat proyek nyata.</p>
+            <p>Di portofolio ini saya mengumpulkan kemampuan, pencapaian, dan karya yang saya buat selama kuliah.</p>
+            <div class="doing">
+              <!-- GANTI: aktivitas saat ini -->
+              <div><b>Membangun</b><span>Website portofolio pribadi</span></div>
+              <div><b>Mempelajari</b><span>HTML, CSS, JavaScript, dan Python</span></div>
+              <div><b>Mengikuti</b><span>Kegiatan Ameliorer Aktif 11</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WHAT I CAN DO ========== -->
+    <section id="skills">
+      <div class="wrap">
+        <h2>What I Can Do</h2>
+        <p class="lead" style="margin-bottom:2rem">Kemampuan yang sedang saya pelajari dan tools yang saya pakai.</p>
+        <div class="skills">
+          <!-- GANTI / TAMBAH kartu sesuai kemampuanmu -->
+          <article class="skill">
+            <h3>Pengembangan Web</h3>
+            <p>Membuat halaman web yang rapi dan nyaman dibuka di laptop maupun HP.</p>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>VS Code</li><li>Git &amp; GitHub</li></ul>
+          </article>
+          <article class="skill">
+            <h3>Pemrograman &amp; Data</h3>
+            <p>Menulis program untuk mengolah data dan menyelesaikan soal praktikum.</p>
+            <ul class="tags"><li>Python</li><li>SQL</li><li>MySQL</li><li>phpMyAdmin</li></ul>
+          </article>
+          <article class="skill">
+            <h3>Desain &amp; Presentasi</h3>
+            <p>Menyusun materi visual untuk tugas dan presentasi kelompok.</p>
+            <ul class="tags"><li>Canva</li><li>PowerPoint</li><li>Tools AI</li></ul>
+          </article>
+        </div>
+        <div class="bar-daftar">
+          <h3 class="bar-judul">Tingkat kemampuan</h3>
+          <!-- GANTI: nama skill, angka --v (0 sampai 100), dan angka di dalam <b> -->
+          <div class="bar" style="--v: 30; --c: #1F5FD6"><div class="bar-atas"><span>HTML &amp; CSS</span><b>30%</b></div><div class="bar-track"><i></i></div></div>
+          <div class="bar" style="--v: 20; --c: #7C3AED"><div class="bar-atas"><span>Python</span><b>20%</b></div><div class="bar-track"><i></i></div></div>
+          <div class="bar" style="--v: 20; --c: #0E9F6E"><div class="bar-atas"><span>SQL &amp; Database</span><b>20%</b></div><div class="bar-track"><i></i></div></div>
+          <div class="bar" style="--v: 20; --c: #E2631B"><div class="bar-atas"><span>JavaScript</span><b>20%</b></div><div class="bar-track"><i></i></div></div>
+          <div class="bar" style="--v: 30; --c: #D6307F"><div class="bar-atas"><span>Git &amp; GitHub</span><b>30%</b></div><div class="bar-track"><i></i></div></div>
+        </div>
+        <div class="marquee" aria-label="Teknologi yang saya gunakan">
+          <div class="jalur">
+            <ul class="grup">
+              <li><span class="lg" style="--c:#E34F26">H5</span>HTML</li>
+              <li><span class="lg" style="--c:#1572B6">C3</span>CSS</li>
+              <li><span class="lg" style="--c:#F7DF1E; --t:#1b1b1b">JS</span>JavaScript</li>
+              <li><span class="lg" style="--c:#3776AB">Py</span>Python</li>
+              <li><span class="lg" style="--c:#00758F">My</span>MySQL</li>
+              <li><span class="lg" style="--c:#F05032">Git</span>Git</li>
+              <li><span class="lg" style="--c:#24292F">GH</span>GitHub</li>
+              <li><span class="lg" style="--c:#007ACC">VS</span>VS Code</li>
+              <li><span class="lg" style="--c:#00C4CC">Ca</span>Canva</li>
+              <li><span class="lg" style="--c:#8B5CF6">AI</span>Tools AI</li>
+            </ul>
+            <ul class="grup" aria-hidden="true">
+              <li><span class="lg" style="--c:#E34F26">H5</span>HTML</li>
+              <li><span class="lg" style="--c:#1572B6">C3</span>CSS</li>
+              <li><span class="lg" style="--c:#F7DF1E; --t:#1b1b1b">JS</span>JavaScript</li>
+              <li><span class="lg" style="--c:#3776AB">Py</span>Python</li>
+              <li><span class="lg" style="--c:#00758F">My</span>MySQL</li>
+              <li><span class="lg" style="--c:#F05032">Git</span>Git</li>
+              <li><span class="lg" style="--c:#24292F">GH</span>GitHub</li>
+              <li><span class="lg" style="--c:#007ACC">VS</span>VS Code</li>
+              <li><span class="lg" style="--c:#00C4CC">Ca</span>Canva</li>
+              <li><span class="lg" style="--c:#8B5CF6">AI</span>Tools AI</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ACHIEVEMENT ========== -->
+    <section id="achievement">
+      <div class="wrap">
+        <h2>Achievement</h2>
+        <ol class="timeline">
+          <!-- GANTI / TAMBAH: nama pencapaian, tahun, penyelenggara, deskripsi singkat, bukti -->
+          <li>
+            <span class="year">2026</span>
+            <h3>Sertifikat Uji Kompetensi</h3>
+            <p class="org">Penyelenggara / Lembaga</p>
+            <p>Deskripsi singkat: Saya Mendapatkan Sertifikat Tersebut Setelah Menjalani Uji Kompetensi Di Tingkat SMK.</p>
+            <a class="bukti" href="sertifikat.jpeg" target="_blank" rel="noopener">Lihat bukti</a>
+          </li>
+          <li>
+            <span class="year">2026</span>
+            <h3>Sertifikat Magang CV SEKAWAN TEHNIK</h3>
+            <p class="org">Penyelenggara / Lembaga</p>
+            <p>Deskripsi singkat : Saya Mendapatkan Sertifikat Ini Setelah Melakukan PKL Di CV SEKAWAN TEHNIK.</p>
+          </li>
+          <li>
+           
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section id="contact" class="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <h2>Ayo berkolaborasi.</h2>
+          <p class="lead" style="margin-bottom:1.75rem">Terbuka untuk proyek, magang, dan diskusi seputar pengembangan web dan Informatika.</p>
+          <a class="btn ghost" href="CV ZAHRAN RAFIF.pdf" download>Unduh CV / Resume</a>
+        </div>
+        <div class="links">
+          <!-- GANTI: email, GitHub, LinkedIn -->
+          <a href="mailto:zahranrafif99@gmail.com"><small>Email</small><strong>zahranrafif99@gmail.com</strong></a>
+          <a href="https://github.com/usernamekamu" target="_blank" rel="noopener"><small>GitHub</small><strong>github.com/usernamekamu</strong></a>
+          <a href="https://www.linkedin.com/in/zahran-rafif-5a62bb441?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener"><small>LinkedIn</small><strong>linkedin.com/in/Zahran Rafif</strong></a>
+          <a class="btn" href="mailto:zahranrafif99@gmail.com" style="text-align:center">Kirim pesan</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Zahran Rafif Arifuddin. Semua hak dilindungi.</div>
+  </footer>
+
+  <div class="musik" id="pemutar" role="group" aria-label="Pemutar musik">
+    <button class="musik-btn" id="musik-toggle" type="button" aria-label="Putar musik" aria-pressed="false">
+      <svg class="ic-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      <svg class="ic-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+    </button>
+    <canvas class="viz" id="viz" aria-hidden="true"></canvas>
+    <input type="range" id="musik-volume" min="0" max="1" step="0.05" value="0.4" aria-label="Volume musik">
+  </div>
+
+  <script>
+    // Tombol ganti mode terang/gelap
+    const root = document.documentElement;
+    const btn = document.getElementById("theme");
+    try { const saved = localStorage.getItem("tema"); if (saved) root.dataset.theme = saved; } catch (e) {}
+    btn.addEventListener("click", () => {
+      const sekarang = root.dataset.theme ||
+        (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      const baru = sekarang === "dark" ? "light" : "dark";
+      root.dataset.theme = baru;
+      try { localStorage.setItem("tema", baru); } catch (e) {}
+    });
+    // Animasi nama: tiap kata dikunci, tiap huruf muncul satu per satu
+    let urutan = 0;
+    document.querySelectorAll("#nama .baris").forEach(baris => {
+      const kata2 = baris.textContent.split(" ");
+      baris.textContent = "";
+      kata2.forEach((kata, idx) => {
+        const k = document.createElement("span");
+        k.className = "kata";
+        [...kata].forEach(h => {
+          const s = document.createElement("span");
+          s.className = "huruf";
+          s.setAttribute("aria-hidden", "true");
+          s.style.setProperty("--i", urutan++);
+          s.textContent = h;
+          k.appendChild(s);
+        });
+        baris.appendChild(k);
+        if (idx < kata2.length - 1) baris.appendChild(document.createTextNode(" "));
+      });
+    });
+    // Tab: tiap menu membuka "halaman" sendiri dengan animasi
+    const urutanTab = ["home", "about", "skills", "achievement", "contact"];
+    const panel = {};
+    urutanTab.forEach(id => panel[id] = document.getElementById(id));
+    const semuaLink = document.querySelectorAll('a[href^="#"]');
+    const kurangGerak = matchMedia("(prefers-reduced-motion: reduce)");
+    let tabAktif = null, timer = null;
+
+    function bukaTab(id) {
+      if (!panel[id]) id = "home";
+      if (id === tabAktif) return;
+      clearTimeout(timer);
+      const lama = tabAktif ? panel[tabAktif] : null;
+      const arah = tabAktif ? (urutanTab.indexOf(id) > urutanTab.indexOf(tabAktif) ? 1 : -1) : 0;
+
+      const pasang = () => {
+        urutanTab.forEach(k => panel[k].classList.remove("aktif", "keluar"));
+        panel[id].style.setProperty("--dx", arah);
+        panel[id].classList.add("aktif");
+        window.scrollTo({ top: 0, behavior: "instant" });
+        tabAktif = id;
+        document.documentElement.dataset.tab = id;   // untuk warna otomatis per tab
+        semuaLink.forEach(a => {
+          if (a.getAttribute("href") === "#" + id) a.setAttribute("aria-current", "page");
+          else a.removeAttribute("aria-current");
+        });
+      };
+
+      if (lama && !kurangGerak.matches) {
+        lama.style.setProperty("--dx", -arah);
+        lama.classList.add("keluar");
+        timer = setTimeout(pasang, 220);
+      } else {
+        pasang();
+      }
+    }
+    window.addEventListener("hashchange", () => bukaTab(location.hash.slice(1)));
+
+    // ===== Musik latar + layar masuk =====
+    const musik = document.getElementById("musik");
+    const pemutar = document.getElementById("pemutar");
+    const tombol = document.getElementById("musik-toggle");
+    const volume = document.getElementById("musik-volume");
+    let fadeTimer;
+
+    function setMain(main) {
+      tombol.classList.toggle("main", main);
+      tombol.setAttribute("aria-pressed", String(main));
+      tombol.setAttribute("aria-label", main ? "Jeda musik" : "Putar musik");
+      gerakViz();
+    }
+    async function putar() {
+      try {
+        siapkanVisualizer();
+        if (ctx && ctx.state === "suspended") await ctx.resume();
+        musik.volume = 0;
+        await musik.play();
+        setMain(true);
+        // volume naik pelan-pelan (fade in)
+        clearInterval(fadeTimer);
+        const target = Number(volume.value);
+        fadeTimer = setInterval(() => {
+          musik.volume = Math.min(target, musik.volume + target / 20);
+          if (musik.volume >= target) clearInterval(fadeTimer);
+        }, 100);
+      } catch (e) { setMain(false); }
+    }
+    function jeda() { clearInterval(fadeTimer); musik.pause(); setMain(false); }
+
+    tombol.addEventListener("click", () => (musik.paused ? putar() : jeda()));
+    volume.addEventListener("input", () => { clearInterval(fadeTimer); musik.volume = Number(volume.value); });
+    musik.addEventListener("error", () => { pemutar.hidden = true; });   // file lagu tidak ditemukan
+
+    // ===== Cahaya kursor + kartu miring =====
+    if (matchMedia("(hover: hover) and (pointer: fine)").matches && !kurangGerak.matches) {
+      const cahaya = document.querySelector(".cahaya");
+      window.addEventListener("mousemove", e => {
+        cahaya.style.opacity = 1;
+        cahaya.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
+      });
+      document.addEventListener("mouseleave", () => { cahaya.style.opacity = 0; });
+      document.querySelectorAll(".skill, .id-card").forEach(kartu => {
+        kartu.addEventListener("mousemove", e => {
+          const r = kartu.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width - .5;
+          const y = (e.clientY - r.top) / r.height - .5;
+          kartu.style.setProperty("--rx", (-y * 10).toFixed(2) + "deg");
+          kartu.style.setProperty("--ry", (x * 10).toFixed(2) + "deg");
+        });
+        kartu.addEventListener("mouseleave", () => {
+          kartu.style.setProperty("--rx", "0deg");
+          kartu.style.setProperty("--ry", "0deg");
+        });
+      });
+    }
+
+    // ===== Sapaan + jam digital =====
+    const zona = "Asia/Jakarta";   // GANTI kalau beda zona: Asia/Makassar (WITA), Asia/Jayapura (WIT)
+    const fJam = new Intl.DateTimeFormat("id-ID", { timeZone: zona, hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false });
+    const fJamSaja = new Intl.DateTimeFormat("en-GB", { timeZone: zona, hour: "numeric", hour12: false });
+    const fTanggal = new Intl.DateTimeFormat("id-ID", { timeZone: zona, weekday: "long", day: "numeric", month: "long" });
+    function perbaruiJam() {
+      const sekarang = new Date();
+      const inggris = document.documentElement.lang === "en";
+      const jam = Number(fJamSaja.format(sekarang)) % 24;
+      const bagian = jam >= 4 && jam < 11 ? 0 : jam >= 11 && jam < 15 ? 1 : jam >= 15 && jam < 18 ? 2 : 3;
+      const salam = inggris
+        ? ["Good morning", "Good afternoon", "Good afternoon", jam >= 18 && jam < 22 ? "Good evening" : "Good night"][bagian]
+        : ["Selamat pagi", "Selamat siang", "Selamat sore", "Selamat malam"][bagian];
+      const tanggal = new Intl.DateTimeFormat(inggris ? "en-GB" : "id-ID", { timeZone: zona, weekday: "long", day: "numeric", month: "long" });
+      document.getElementById("salam").textContent = salam;
+      document.getElementById("tanggal").textContent = tanggal.format(sekarang);
+      document.getElementById("jam").textContent = fJam.format(sekarang).replace(/\./g, ":");
+    }
+    perbaruiJam();
+    setInterval(perbaruiJam, 1000);
+
+    // ===== Visualizer musik =====
+    const kanvas = document.getElementById("viz");
+    const gbr = kanvas.getContext("2d");
+    const dpr = window.devicePixelRatio || 1;
+    kanvas.width = 48 * dpr;
+    kanvas.height = 28 * dpr;
+    let ctx, analyser, dataFreq, rafId;
+
+    function siapkanVisualizer() {
+      // Analisis suara hanya aman lewat http/https (Live Server / GitHub Pages),
+      // kalau index.html dibuka langsung (file://) animasinya jadi animasi biasa.
+      if (analyser || !/^https?:$/.test(location.protocol)) return;
+      try {
+        const AC = window.AudioContext || window.webkitAudioContext;
+        if (!AC) return;
+        ctx = new AC();
+        const sumber = ctx.createMediaElementSource(musik);
+        analyser = ctx.createAnalyser();
+        analyser.fftSize = 64;
+        analyser.smoothingTimeConstant = 0.8;
+        sumber.connect(analyser);
+        analyser.connect(ctx.destination);
+        dataFreq = new Uint8Array(analyser.frequencyBinCount);
+      } catch (e) { analyser = null; }
+    }
+    function gambarViz(waktu) {
+      const W = kanvas.width, H = kanvas.height, n = 6, lebar = W / n;
+      const main = tombol.classList.contains("main");
+      gbr.clearRect(0, 0, W, H);
+      gbr.fillStyle = getComputedStyle(document.documentElement).getPropertyValue("--accent").trim();
+      if (main && analyser) analyser.getByteFrequencyData(dataFreq);
+      for (let i = 0; i < n; i++) {
+        let v;
+        if (!main) v = 0.1;                                                  // jeda: bar datar
+        else if (analyser) v = Math.min(1, Math.pow(dataFreq[i] / 255, 1.6) * 1.1);
+        else v = 0.25 + 0.75 * Math.abs(Math.sin(waktu / 280 + i * 1.3));    // tanpa analyser
+        const tinggi = Math.max(3 * dpr, v * H);
+        gbr.fillRect(i * lebar + lebar * 0.15, H - tinggi, lebar * 0.7, tinggi);
+      }
+      if (main && !kurangGerak.matches) rafId = requestAnimationFrame(gambarViz);
+    }
+    function gerakViz() { cancelAnimationFrame(rafId); gambarViz(performance.now()); }
+    gerakViz();
+
+    // ===== Teks peran mengetik =====
+    const daftarPeran = ["Web Developer", "Python Learner", "Problem Solver"];   // GANTI sesuai perananmu
+    const elPeran = document.getElementById("peran-teks");
+    if (kurangGerak.matches) {
+      elPeran.textContent = daftarPeran[0];
+    } else {
+      let urutPeran = 0, huruf = 0, menghapus = false;
+      function ketik() {
+        const kata = daftarPeran[urutPeran];
+        huruf += menghapus ? -1 : 1;
+        elPeran.textContent = kata.slice(0, huruf);
+        let jeda = menghapus ? 40 : 90;
+        if (!menghapus && huruf === kata.length) { menghapus = true; jeda = 1600; }
+        else if (menghapus && huruf === 0) { menghapus = false; urutPeran = (urutPeran + 1) % daftarPeran.length; jeda = 400; }
+        setTimeout(ketik, jeda);
+      }
+      setTimeout(ketik, 1200);   // mulai setelah animasi nama selesai
+    }
+
+    // ============================================================
+    //  FITUR LANJUTAN: warna tema, bahasa, kursor
+    // ============================================================
+    const akar = document.documentElement;
+
+    // ----- Pemilih warna tema -----
+    const daftarWarna = ["auto", "biru", "ungu", "hijau", "oranye", "pink"];
+    const tombolWarna = document.querySelectorAll(".wd");
+    const panelWarna = document.getElementById("warna-panel");
+    const btnWarna = document.getElementById("warna-btn");
+    function setWarna(w) {
+      if (!daftarWarna.includes(w)) return false;
+      akar.dataset.warna = w;
+      try { localStorage.setItem("warna", w); } catch (e) {}
+      tombolWarna.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.warna === w)));
+      return true;
+    }
+    function bukaPanelWarna(buka) {
+      panelWarna.hidden = !buka;
+      btnWarna.setAttribute("aria-expanded", String(buka));
+    }
+    btnWarna.addEventListener("click", () => bukaPanelWarna(panelWarna.hidden));
+    tombolWarna.forEach(b => b.addEventListener("click", () => { setWarna(b.dataset.warna); bukaPanelWarna(false); }));
+    document.addEventListener("click", e => { if (!e.target.closest(".warna-wadah")) bukaPanelWarna(false); });
+    document.addEventListener("keydown", e => { if (e.key === "Escape") bukaPanelWarna(false); });
+    let warnaSimpan = null;
+    try { warnaSimpan = localStorage.getItem("warna"); } catch (e) {}
+    setWarna(warnaSimpan || "auto");
+
+    // ----- Bahasa Indonesia / Inggris -----
+    // Kunci = teks Indonesia PERSIS seperti di HTML, nilai = terjemahan Inggris.
+    // Teks yang kamu ubah sendiri di HTML: tambahkan pasangannya di sini.
+    const kamus = {
+      "Lihat pencapaian": "See achievements",
+      "Unduh CV": "Download CV",
+      "Mahasiswa Informatika yang suka mengubah ide menjadi aplikasi yang berfungsi.": "Informatics student who loves turning ideas into working applications.",
+      "Nama": "Name", "Prodi": "Study Program", "Pendidikan": "Education", "Informatika": "Informatics",
+      "Halo, saya mahasiswa baru Informatika. Saya sedang belajar membangun website dan program, dan ingin terus berkembang lewat proyek nyata.": "Hi, I'm a new Informatics student. I'm learning to build websites and programs, and I want to keep growing through real projects.",
+      "Di portofolio ini saya mengumpulkan kemampuan, pencapaian, dan karya yang saya buat selama kuliah.": "In this portfolio I collect the skills, achievements, and work I create during my studies.",
+      "Membangun": "Building", "Mempelajari": "Learning", "Mengikuti": "Joining",
+      "Website portofolio pribadi": "Personal portfolio website",
+      "HTML, CSS, JavaScript, dan Python": "HTML, CSS, JavaScript, and Python",
+      "Kegiatan Ameliorer Aktif 11": "Ameliorer Aktif 11 program",
+      "Kemampuan yang sedang saya pelajari dan tools yang saya pakai.": "Skills I'm learning and the tools I use.",
+      "Pengembangan Web": "Web Development",
+      "Membuat halaman web yang rapi dan nyaman dibuka di laptop maupun HP.": "Building clean web pages that look great on laptops and phones.",
+      "Pemrograman & Data": "Programming & Data",
+      "Menulis program untuk mengolah data dan menyelesaikan soal praktikum.": "Writing programs to process data and solve lab exercises.",
+      "Desain & Presentasi": "Design & Presentation",
+      "Menyusun materi visual untuk tugas dan presentasi kelompok.": "Creating visual material for assignments and group presentations.",
+      "Tingkat kemampuan": "Skill level",
+      "Nama Pencapaian Terbaru": "Latest Achievement Name",
+      "Penyelenggara / Lembaga": "Organizer / Institution",
+      "Deskripsi singkat: apa yang kamu capai dan apa yang kamu pelajari dari sana.": "Short description: what you achieved and what you learned from it.",
+      "Lihat bukti": "View proof",
+      "Ayo berkolaborasi.": "Let's collaborate.",
+      "Terbuka untuk proyek, magang, dan diskusi seputar pengembangan web dan Informatika.": "Open to projects, internships, and discussions about web development and Informatics.",
+      "Unduh CV / Resume": "Download CV / Resume",
+      "Kirim pesan": "Send a message",
+      "© 2026 Zahran Rafif Arifuddin. Semua hak dilindungi.": "© 2026 Zahran Rafif Arifuddin. All rights reserved."
+    };
+    const lewati = ".sapa, .peran, .musik";   // bagian yang diisi JavaScript
+    const teksAsli = new WeakMap();
+    function terjemahkan(inggris) {
+      const jalan = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      let n;
+      while ((n = jalan.nextNode())) {
+        const p = n.parentElement;
+        if (!p || p.closest(lewati) || /^(SCRIPT|STYLE|NOSCRIPT)$/.test(p.tagName) || !n.nodeValue.trim()) continue;
+        if (!teksAsli.has(n)) teksAsli.set(n, n.nodeValue);
+        const asli = teksAsli.get(n), kunci = asli.trim();
+        n.nodeValue = inggris && kamus[kunci] ? asli.replace(kunci, () => kamus[kunci]) : asli;
+      }
+    }
+    function setBahasa(b) {
+      akar.lang = b;
+      try { localStorage.setItem("bahasa", b); } catch (e) {}
+      terjemahkan(b === "en");
+      document.querySelectorAll(".lang-btn span").forEach(s => s.classList.toggle("on", s.dataset.b === b));
+      perbaruiJam();
+    }
+    document.getElementById("bahasa-btn").addEventListener("click", () => setBahasa(akar.lang === "en" ? "id" : "en"));
+    let bahasaSimpan = null;
+    try { bahasaSimpan = localStorage.getItem("bahasa"); } catch (e) {}
+    setBahasa(bahasaSimpan === "en" ? "en" : "id");
+
+    // ----- Kursor kustom (cincin) -----
+    if (matchMedia("(hover: hover) and (pointer: fine)").matches && !kurangGerak.matches) {
+      const cincin = document.querySelector(".cincin");
+      let cx = 0, cy = 0, tx = 0, ty = 0, terlihat = false;
+      window.addEventListener("mousemove", e => {
+        tx = e.clientX; ty = e.clientY;
+        if (!terlihat) { cx = tx; cy = ty; terlihat = true; cincin.style.opacity = 1; }
+      });
+      document.addEventListener("mouseleave", () => { terlihat = false; cincin.style.opacity = 0; });
+      document.addEventListener("mouseover", e => cincin.classList.toggle("besar", !!e.target.closest("a, button, input, .skill, .id-card, .repo")));
+      document.addEventListener("mousedown", () => cincin.classList.add("tekan"));
+      document.addEventListener("mouseup", () => cincin.classList.remove("tekan"));
+      (function gerak() {
+        cx += (tx - cx) * 0.18; cy += (ty - cy) * 0.18;
+        cincin.style.transform = `translate3d(${cx}px, ${cy}px, 0) translate(-50%, -50%)`;
+        requestAnimationFrame(gerak);
+      })();
+    }
+    // ============================================================
+    //  PINDAH TAB KEREN: pintasan keyboard, tirai, dok, menu cepat, geser
+    // ============================================================
+    const TIRAI_UNTUK_MENU = false;   // true = klik menu di atas juga memakai efek tirai
+    const pilih = (id, eng) => (akar.lang === "en" ? eng : id);
+    const namaTab = id => { const a = document.querySelector('.nav-links a[href="#' + id + '"]'); return a ? a.textContent.trim() : id; };
+    const infoTab = {   // [info Indonesia, info Inggris, kata kunci pencarian]
+      home: ["Halaman utama", "Main page", "beranda utama"],
+      about: ["Profil dan aktivitas", "Profile and activities", "tentang profil saya"],
+      skills: ["Kemampuan dan tools", "Skills and tools", "kemampuan skill keahlian"],
+      achievement: ["Pencapaian dan sertifikat", "Achievements and certificates", "pencapaian prestasi sertifikat"],
+      contact: ["Email, GitHub, LinkedIn, CV", "Email, GitHub, LinkedIn, CV", "kontak hubungi"]
+    };
+
+    // ----- Tirai: dua lapis warna menyapu layar, nama tab muncul besar -----
+    const tirai2 = document.createElement("div");
+    tirai2.className = "tirai2"; tirai2.setAttribute("aria-hidden", "true");
+    const tirai = document.createElement("div");
+    tirai.className = "tirai"; tirai.setAttribute("aria-hidden", "true");
+    tirai.innerHTML = '<div><div class="no"></div><div class="nm"></div></div>';
+    document.body.append(tirai2, tirai);
+    let sedangPindah = false;
+
+    async function pindahKeren(id, arah) {
+      if (!panel[id] || id === tabAktif || sedangPindah) return;
+      if (kurangGerak.matches) { location.hash = "#" + id; return; }   // tanpa animasi kalau pengguna meminta
+      sedangPindah = true;
+      const idx = urutanTab.indexOf(id);
+      if (!arah) arah = idx > urutanTab.indexOf(tabAktif) ? 1 : -1;
+      tirai.querySelector(".no").textContent = String(idx + 1).padStart(2, "0");
+      tirai.querySelector(".nm").textContent = namaTab(id);
+      akar.dataset.tab = id;                     // warna otomatis ikut berubah selagi tirai lewat
+      tirai2.style.visibility = tirai.style.visibility = "visible";
+      const masuk = [{ transform: `translateX(${arah * 100}%)` }, { transform: "translateX(0)" }];
+      const keluar = [{ transform: "translateX(0)" }, { transform: `translateX(${-arah * 100}%)` }];
+      const opsi = (durasi, tunda) => ({ duration: durasi, delay: tunda, easing: "cubic-bezier(.7, 0, .2, 1)", fill: "forwards" });
+      tirai2.animate(masuk, opsi(380, 0));
+      await tirai.animate(masuk, opsi(380, 70)).finished;     // layar tertutup penuh
+      location.hash = "#" + id;                               // ganti tab di balik tirai
+      await new Promise(r => setTimeout(r, 260));
+      tirai2.animate(keluar, opsi(420, 70));
+      await tirai.animate(keluar, opsi(420, 0)).finished;     // tirai terbuka, tab baru terlihat
+      [tirai, tirai2].forEach(t => { t.getAnimations().forEach(a => a.cancel()); t.style.visibility = "hidden"; });
+      if (tabAktif !== id) bukaTab(id);
+      sedangPindah = false;
+    }
+
+    // ----- Dok pintasan di bawah (hanya di layar lebar) -----
+    const dok = document.createElement("nav");
+    dok.className = "dok";
+    dok.setAttribute("aria-label", pilih("Pintasan tab", "Tab shortcuts"));
+    urutanTab.forEach((id, i) => {
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "dok-btn"; b.dataset.id = id;
+      const k = document.createElement("kbd"); k.textContent = i + 1;
+      const s = document.createElement("span"); s.textContent = namaTab(id);
+      b.append(k, s);
+      b.addEventListener("click", () => pindahKeren(id));
+      dok.append(b);
+    });
+    document.body.append(dok);
+    const tandaiDok = () => dok.querySelectorAll(".dok-btn").forEach(b => b.classList.toggle("aktif", b.dataset.id === akar.dataset.tab));
+    new MutationObserver(tandaiDok).observe(akar, { attributes: true, attributeFilter: ["data-tab"] });
+    tandaiDok();
+
+    // ----- Menu cepat (Ctrl+K atau /) -----
+    const palet = document.createElement("div");
+    palet.className = "palet"; palet.hidden = true;
+    palet.innerHTML = '<div class="palet-kotak" role="dialog" aria-modal="true"><input class="palet-cari" type="text" autocomplete="off" spellcheck="false"><ul class="palet-daftar" role="listbox"></ul><div class="palet-bawah"></div></div>';
+    document.body.append(palet);
+    const paletCari = palet.querySelector(".palet-cari");
+    const paletDaftar = palet.querySelector(".palet-daftar");
+    let paletItem = [], paletAktif = 0, fokusSebelum = null;
+
+    function semuaPerintah() {
+      const tab = urutanTab.map((id, i) => ({ kunci: String(i + 1), label: namaTab(id), info: (infoTab[id] || ["", "", ""])[akar.lang === "en" ? 1 : 0], kata: (infoTab[id] || ["", "", ""])[2], jalan: () => pindahKeren(id) }));
+      return tab.concat([
+        { kunci: "•", label: pilih("Ganti mode terang/gelap", "Toggle light/dark mode"), info: "", jalan: () => document.getElementById("theme").click() },
+        { kunci: "•", label: pilih("Putar / jeda musik", "Play / pause music"), info: "", jalan: () => tombol.click() },
+        { kunci: "•", label: pilih("Ganti bahasa (ID/EN)", "Switch language (ID/EN)"), info: "", jalan: () => document.getElementById("bahasa-btn").click() },
+        { kunci: "•", label: pilih("Ganti warna tema", "Change theme colour"), info: "", jalan: () => setWarna(daftarWarna[(daftarWarna.indexOf(akar.dataset.warna) + 1) % daftarWarna.length]) }
+      ]);
+    }
+    function gambarPalet() {
+      const q = paletCari.value.trim().toLowerCase();
+      paletItem = semuaPerintah().filter(p => !q || (p.label + " " + p.info + " " + (p.kata || "")).toLowerCase().includes(q));
+      paletAktif = Math.min(paletAktif, Math.max(0, paletItem.length - 1));
+      paletDaftar.textContent = "";
+      paletItem.forEach((p, i) => {
+        const li = document.createElement("li");
+        li.setAttribute("role", "option");
+        li.className = i === paletAktif ? "aktif" : "";
+        const k = document.createElement("kbd"); k.textContent = p.kunci;
+        const t = document.createElement("span"); t.textContent = p.label;
+        const s = document.createElement("small"); s.textContent = p.info;
+        li.append(k, t, s);
+        li.addEventListener("mousemove", () => { paletAktif = i; tandaiPalet(); });
+        li.addEventListener("click", () => jalankanPalet(i));
+        paletDaftar.append(li);
+      });
+      if (!paletItem.length) { const li = document.createElement("li"); li.textContent = pilih("Tidak ada hasil", "No results"); paletDaftar.append(li); }
+    }
+    function tandaiPalet() { [...paletDaftar.children].forEach((li, i) => li.classList.toggle("aktif", i === paletAktif)); }
+    function jalankanPalet(i) { const p = paletItem[i]; if (!p) return; tutupPalet(); p.jalan(); }
+    function bukaPalet() {
+      fokusSebelum = document.activeElement;
+      palet.querySelector(".palet-kotak").setAttribute("aria-label", pilih("Menu cepat", "Quick menu"));
+      paletCari.placeholder = pilih("Ketik untuk mencari tab atau aksi…", "Type to search tabs or actions…");
+      palet.querySelector(".palet-bawah").textContent = pilih("↑ ↓ pilih  ·  Enter buka  ·  Esc tutup", "↑ ↓ select  ·  Enter open  ·  Esc close");
+      paletCari.value = ""; paletAktif = 0; gambarPalet();
+      palet.hidden = false; paletCari.focus();
+    }
+    function tutupPalet() { palet.hidden = true; if (fokusSebelum && fokusSebelum.focus) fokusSebelum.focus(); }
+    paletCari.addEventListener("input", () => { paletAktif = 0; gambarPalet(); });
+    paletCari.addEventListener("keydown", e => {
+      if (e.key === "ArrowDown") { e.preventDefault(); paletAktif = (paletAktif + 1) % Math.max(1, paletItem.length); tandaiPalet(); }
+      else if (e.key === "ArrowUp") { e.preventDefault(); paletAktif = (paletAktif - 1 + paletItem.length) % Math.max(1, paletItem.length); tandaiPalet(); }
+      else if (e.key === "Enter") { e.preventDefault(); jalankanPalet(paletAktif); }
+      else if (e.key === "Escape") { e.preventDefault(); tutupPalet(); }
+    });
+    palet.addEventListener("mousedown", e => { if (e.target === palet) tutupPalet(); });
+
+    // ----- Pintasan keyboard -----
+    document.addEventListener("keydown", e => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") { e.preventDefault(); palet.hidden ? bukaPalet() : tutupPalet(); return; }
+      const mengetik = e.target.closest && e.target.closest("input, textarea, select, [contenteditable]");
+      if (e.ctrlKey || e.metaKey || e.altKey || mengetik || !palet.hidden) return;
+      const sekarang = urutanTab.indexOf(tabAktif);
+      if (e.key === "/") { e.preventDefault(); bukaPalet(); }
+      else if (/^[1-9]$/.test(e.key) && urutanTab[Number(e.key) - 1]) pindahKeren(urutanTab[Number(e.key) - 1]);
+      else if (e.key === "ArrowRight") pindahKeren(urutanTab[(sekarang + 1) % urutanTab.length], 1);
+      else if (e.key === "ArrowLeft") pindahKeren(urutanTab[(sekarang - 1 + urutanTab.length) % urutanTab.length], -1);
+    });
+
+    // ----- Geser kiri/kanan di layar sentuh -----
+    let sentuh = null;
+    document.addEventListener("touchstart", e => {
+      if (e.touches.length !== 1 || e.target.closest("input, .musik, .warna-panel, .marquee, .palet")) { sentuh = null; return; }
+      const t = e.touches[0];
+      sentuh = { x: t.clientX, y: t.clientY, w: Date.now() };
+    }, { passive: true });
+    document.addEventListener("touchend", e => {
+      if (!sentuh) return;
+      const t = e.changedTouches[0];
+      const dx = t.clientX - sentuh.x, dy = t.clientY - sentuh.y, dt = Date.now() - sentuh.w;
+      sentuh = null;
+      if (Math.abs(dx) < 80 || Math.abs(dy) > 50 || dt > 700) return;
+      const arah = dx < 0 ? 1 : -1;
+      const tujuan = urutanTab[urutanTab.indexOf(tabAktif) + arah];
+      if (tujuan) pindahKeren(tujuan, arah);
+    }, { passive: true });
+
+    // ----- Klik menu atas memakai tirai juga (kalau TIRAI_UNTUK_MENU = true) -----
+    if (TIRAI_UNTUK_MENU) {
+      document.addEventListener("click", e => {
+        const a = e.target.closest('a[href^="#"]');
+        const id = a && a.getAttribute("href").slice(1);
+        if (id && panel[id]) { e.preventDefault(); pindahKeren(id); }
+      });
+    }
+
+    // ----- Petunjuk singkat (sekali per kunjungan) -----
+    let tipSudah = false;
+    try { tipSudah = sessionStorage.getItem("tip") === "1"; } catch (e) {}
+    if (!tipSudah) {
+      const tip = document.createElement("div");
+      tip.className = "tip"; tip.setAttribute("role", "status");
+      tip.textContent = matchMedia("(hover: none)").matches
+        ? pilih("Tips: geser kiri/kanan untuk pindah tab", "Tip: swipe left/right to switch tabs")
+        : pilih("Tips: tekan 1–5 atau ← → untuk pindah tab, Ctrl+K untuk menu cepat", "Tip: press 1–5 or ← → to switch tabs, Ctrl+K for the quick menu");
+      document.body.append(tip);
+      setTimeout(() => tip.classList.add("tampil"), 2500);
+      setTimeout(() => { tip.classList.remove("tampil"); setTimeout(() => tip.remove(), 600); }, 8000);
+      try { sessionStorage.setItem("tip", "1"); } catch (e) {}
+    }
+    bukaTab(location.hash.slice(1) || "home");
+  </script>
+</body>
+</html>
